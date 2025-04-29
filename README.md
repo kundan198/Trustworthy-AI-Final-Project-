@@ -1,97 +1,94 @@
-# Trustworthy Sign Language Translator
+# 🤟 Trustworthy Sign Language Translator
 
-A machine learning project focused on building a **Sign Language Translator** that is **accurate**, **fair across demographics**, and **robust** to real-world conditions like lighting changes and occlusion.
-
----
-
-## 🚀 Project Overview
-
-- **Goal:** Recognize hand gestures reliably across different skin tones, hand shapes, and environmental conditions.
-- **Approach:**
-  - Use hand landmark data.
-  - Train a deep learning model using TensorFlow/Keras.
-  - Explicitly evaluate **fairness** across demographic groups.
-  - Assess **robustness** to noise and real-world distortions.
+This project builds a **Sign Language Translator** model with a strong emphasis on **trustworthiness** — focusing not just on **accuracy**, but also on **fairness** across demographics and **robustness** under real-world conditions.
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠 Project Structure
 
-- Python
-- TensorFlow / Keras
-- Scikit-learn
-- Pandas, NumPy
-- Matplotlib (optional for visualization)
-
----
-
-## 📂 Repository Structure
-
-├── landmarks_data.csv # Landmark coordinates of hand gestures ├── demographic_data.csv # Demographic information (e.g., skin tone) ├── train_data.py # Main training and evaluation script ├── sign_language_model.keras # Saved trained model ├── label_classes.npy # Saved label encoder classes ├── README.md # Project documentation
-
-yaml
-Copy
-Edit
+- **landmarks_data.csv** — Hand landmark coordinates + labels (gestures).
+- **demographic_data.csv** — Demographic information (like skin tone) for fairness evaluation.
+- **train_data.py** — Script to train the model, evaluate fairness, and save outputs.
+- **sign_language_model.keras** — Trained model.
+- **label_classes.npy** — Encoded gesture classes.
+- **README.md** — Project description.
 
 ---
 
-## 📊 Evaluation
+## 🚀 Features
 
-- **Fairness Metrics:**  
-  We evaluated model performance (accuracy, precision, recall) **separately** for different demographic groups based on skin tone.
-
-- **Robustness Observation:**  
-  Due to normalization and preprocessing, the model showed **consistent accuracy** even under blurred, occluded, or low-light conditions. Formal robustness evaluation is planned for future updates.
+- Hand landmark-based gesture recognition.
+- Fairness evaluation across demographic groups.
+- (Planned) Robustness evaluation under distortions like blur and occlusion.
+- Model saved in modern `.keras` format.
+- Label encoder saved separately for easy deployment.
 
 ---
 
-## ✅ How to Run
+## 📈 How It Works
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/Trustworthy-Sign-Language-Translator.git
-   cd Trustworthy-Sign-Language-Translator
-Install required libraries:
+1. **Data Loading**  
+   Reads hand landmarks and demographic info (like skin tone).
 
-bash
-Copy
-Edit
+2. **Model Training**  
+   A fully connected neural network is trained to classify gestures.
+
+3. **Fairness Evaluation**  
+   Calculates **accuracy**, **precision**, and **recall** per demographic group.
+
+4. **Saving Outputs**  
+   Saves the trained model (`.keras`) and label classes (`.npy`) for reuse.
+
+---
+
+## ⚙️ Requirements
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
-Make sure your landmarks_data.csv and demographic_data.csv are correctly placed.
+```
 
-Train the model:
-
-bash
-Copy
-Edit
-python train_data.py
-📈 Future Work
-Extend recognition from single gestures to full sentences.
-
-Add explainability features to show how predictions are made.
-
-Deploy the model on edge devices (e.g., mobile phones, Raspberry Pi).
-
-🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
-📄 License
-This project is licensed under the MIT License.
-
-💬 Acknowledgements
-Inspired by the need to make AI systems more trustworthy, inclusive, and robust.
-
-yaml
-Copy
-Edit
+Libraries used:
+- `pandas`
+- `numpy`
+- `tensorflow`
+- `scikit-learn`
 
 ---
 
-### 3. Add this to `requirements.txt`:
+## 🧪 How to Run
 
-```text
-tensorflow
-scikit-learn
-pandas
-numpy
-matplotlib
+```bash
+python train_data.py
+```
+
+Make sure the following files are in the same directory:
+- `landmarks_data.csv`
+- `demographic_data.csv`
+- `train_data.py`
+
+---
+
+## 📋 Notes
+
+- We **normalize** input data, which improves generalization under different lighting and slight noise automatically.
+- **Fairness** is checked by splitting evaluation results based on demographic groups like skin tone.
+- **Robustness** evaluation (blur, occlusion, lighting conditions) is planned for future enhancement.
+
+---
+
+## 🚀 Future Work
+
+- Add full-sentence recognition (not just isolated gestures).
+- Implement robustness testing against real-world distortions.
+- Add explainability (why the model made a prediction).
+- Deploy lightweight model to **Edge devices** (like mobile).
+
+---
+
+## 🙏 Acknowledgements
+
+Inspired by the need for trustworthy, inclusive AI systems that work equally for everyone.
+
+---
