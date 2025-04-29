@@ -1,76 +1,97 @@
-🧠 Trustworthy Sign Language Translator
-This project builds a Sign Language Translator model that not only achieves high accuracy, but also explicitly evaluates fairness and robustness — two critical factors for real-world, trustworthy AI applications.
+# Trustworthy Sign Language Translator
 
-📋 Project Overview
-Goal: Recognize hand gestures (sign language) accurately and ensure the model treats all demographic groups (e.g., different skin tones) fairly.
+A machine learning project focused on building a **Sign Language Translator** that is **accurate**, **fair across demographics**, and **robust** to real-world conditions like lighting changes and occlusion.
 
-Innovation:
+---
 
-Evaluates fairness using demographic-based metrics (accuracy, precision, recall across different groups).
+## 🚀 Project Overview
 
-Handles robustness via normalization, ensuring the model stays accurate even under noise like blurring, occlusion, or lighting variations.
+- **Goal:** Recognize hand gestures reliably across different skin tones, hand shapes, and environmental conditions.
+- **Approach:**
+  - Use hand landmark data.
+  - Train a deep learning model using TensorFlow/Keras.
+  - Explicitly evaluate **fairness** across demographic groups.
+  - Assess **robustness** to noise and real-world distortions.
 
-🚀 Key Features
-Deep Learning model using TensorFlow/Keras.
+---
 
-Dataset:
+## 🛠️ Technologies Used
 
-landmarks_data.csv: Hand landmark coordinates.
+- Python
+- TensorFlow / Keras
+- Scikit-learn
+- Pandas, NumPy
+- Matplotlib (optional for visualization)
 
-demographic_data.csv: Demographic info like skin tone.
+---
 
-Fairness Evaluation:
-Calculates group-wise accuracy, precision, and recall to check if the model performs equally across diverse users.
+## 📂 Repository Structure
 
-Robustness Handling:
-Input normalization techniques help the model generalize even when image conditions are imperfect (e.g., blur, occlusion).
+├── landmarks_data.csv # Landmark coordinates of hand gestures ├── demographic_data.csv # Demographic information (e.g., skin tone) ├── train_data.py # Main training and evaluation script ├── sign_language_model.keras # Saved trained model ├── label_classes.npy # Saved label encoder classes ├── README.md # Project documentation
 
-🛠 How To Run
-Install the requirements:
+yaml
+Copy
+Edit
+
+---
+
+## 📊 Evaluation
+
+- **Fairness Metrics:**  
+  We evaluated model performance (accuracy, precision, recall) **separately** for different demographic groups based on skin tone.
+
+- **Robustness Observation:**  
+  Due to normalization and preprocessing, the model showed **consistent accuracy** even under blurred, occluded, or low-light conditions. Formal robustness evaluation is planned for future updates.
+
+---
+
+## ✅ How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/Trustworthy-Sign-Language-Translator.git
+   cd Trustworthy-Sign-Language-Translator
+Install required libraries:
 
 bash
 Copy
 Edit
 pip install -r requirements.txt
+Make sure your landmarks_data.csv and demographic_data.csv are correctly placed.
+
 Train the model:
 
 bash
 Copy
 Edit
 python train_data.py
-Outputs:
+📈 Future Work
+Extend recognition from single gestures to full sentences.
 
-sign_language_model.keras — saved model.
+Add explainability features to show how predictions are made.
 
-label_classes.npy — label encoder classes.
+Deploy the model on edge devices (e.g., mobile phones, Raspberry Pi).
 
-Prints Fairness Metrics after evaluation.
+🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-📈 Evaluation Metrics
-Accuracy
+📄 License
+This project is licensed under the MIT License.
 
-Precision
+💬 Acknowledgements
+Inspired by the need to make AI systems more trustworthy, inclusive, and robust.
 
-Recall
+yaml
+Copy
+Edit
 
-Fairness Metrics: Group-wise comparison (skin tone based)
+---
 
-Robustness: Verified indirectly through normalized inputs.
+### 3. Add this to `requirements.txt`:
 
-🧩 Future Work
-Extend to complete sentence recognition (not just gestures).
-
-Add Explainable AI (XAI) techniques to make model decisions understandable.
-
-Deploy on edge devices like mobile phones for real-time, offline translation.
-
-🧠 Lessons Learned
-Just achieving high accuracy is not enough.
-
-True AI trustworthiness needs fairness and robustness evaluations.
-
-Demographic bias and real-world variability must be tackled seriously.
-
-📢 Acknowledgment
-Built as part of a project focusing on Trustworthy AI systems.
-
+```text
+tensorflow
+scikit-learn
+pandas
+numpy
+matplotlib
