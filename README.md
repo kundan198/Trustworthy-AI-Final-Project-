@@ -32,28 +32,50 @@ Trustworthy-Sign-Language-Translator/
 
 ---
 
-## 🚀 How to Run
+## Installation
 
-1. **Clone the repository**:
+1. **Clone the repository:**
+   ```sh
+   git clone [https://github.com/kundan198/Sign-Language-Translator-AI-for-Gesture-Recognition]
 
-```bash
-git clone https://github.com/yourusername/Trustworthy-Sign-Language-Translator.git
-cd Trustworthy-Sign-Language-Translator
-```
+2. **Create and activate a virtual environment:**
+   ```sh
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   ```
 
-2. **Install dependencies**:
+3. **Install dependencies:**
+   ```sh
+   pip install -r requirements.txt
+   ```
 
-```bash
-pip install -r requirements.txt
-```
+4. **Download Datasets:**
+   ```sh
+   [https://www.kaggle.com/datasets/grassknoted/asl-alphabet]
+   ```
 
-3. **Run the training and evaluation script**:
+## Running the Program
 
-```bash
-python train_data.py
-```
+1. **Collect dataset (using MediaPipe to extract landmarks):**
+   ```sh
+   python collect_data.py
+   ```
 
----
+2. **Train the model:**
+   ```sh
+   python train_data.py
+   ```
+
+3. **Run the prediction (real-time or image-based):**
+   ```sh
+   python predict_data.py
+   ```
+
+## Notes
+
+- Ensure you have a **webcam** connected for real-time predictions.
+- If accuracy is low, consider **increasing dataset size** or **tweaking hyperparameters**.
+
 
 ## 🔎 Evaluation Details
 
